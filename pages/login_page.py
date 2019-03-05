@@ -22,7 +22,7 @@ class LoginPage(BasePage):
     signup_email_field = "input[name='signupEmail']"
     forgot_password_link = ".forgot-password"
     forgot_password_email_field = ".forget-password input[name='email']"
-    item = "item"
+    item = "#item"
 
 
     def clickFacebookLoginLink(self):

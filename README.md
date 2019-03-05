@@ -1,25 +1,29 @@
 # README
 This is an working example of python automation framework, using pytest
 
-#Prerequisites
+# Prerequisites
 - Download latest version of Python 3: https://www.python.org/downloads/
 - Download latest chromedriver: http://chromedriver.chromium.org/downloads
 - Add chromedriver executable in PATH
+- Change chromedriver variable in base/webdriver_factory.py to actual executable
 
-
+# Install
     pip install py-test
     pytest --version #make sure it was properly installed
     
-
-#Run example
+# Extra
+    pip install requests
+Requests lib is used for API calls. 
+    
+# Run example
     pytest tests/test_suite_demo.py --browser chrome --junitxml=result.xml -s
     
-#other parameters
+# other parameters
     -m smoke #selects tests that are marked with the same fixture: example @pytest.mark.smoke 
 
 I'm using PyCharm as IDE: https://www.jetbrains.com/pycharm/download/
 
-#Intro
+# Intro
 - base/basepage.py is the template that should be extended by every page of the project. It should contain common methods
 - pages/page_example.py any page should contain: locator found specific into that page, methods (actions) available in the page and methods (validations), step scenarios for the page
 - tests/test_suite_demo.py will define testsuites to be executed by selecting test files

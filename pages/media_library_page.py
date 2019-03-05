@@ -17,8 +17,8 @@ class MediaLibraryPage(BasePage):
 
 
     def navigateToUserSettings(self):
-        userSettingsElement = self.waitForElement(locator=self.user_settings_icon, locatorType="name", pollFrequency=1)
-        self.elementClick(element=userSettingsElement)
+        self.waitForElement(locator=self.user_settings_icon, locatorType="name", pollFrequency=1)
+        self.elementClick(self.user_settings_icon)
 
     def logout(self):
         self.elementClick(self.menuButton)

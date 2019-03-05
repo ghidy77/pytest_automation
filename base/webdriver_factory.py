@@ -55,7 +55,7 @@ class WebDriverFactory():
         else:
             driver = webdriver.Firefox()
         # Setting Driver Implicit Time out for An Element
-        driver.implicitly_wait(0)
+        driver.implicitly_wait(5)
         # Maximize the window
         driver.maximize_window()
         # Loading browser with App URL

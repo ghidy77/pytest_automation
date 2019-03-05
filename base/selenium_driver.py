@@ -57,7 +57,7 @@ class SeleniumDriver():
                           " not correct/supported")
         return False
 
-    def getElement(self, locator, locatorType="id"):
+    def getElement(self, locator, locatorType="css"):
         element = None
         try:
             locatorType = locatorType.lower()
@@ -81,7 +81,7 @@ class SeleniumDriver():
                           " locatorType: " + locatorType)
             print_stack()
 
-    def sendKeys(self, data, locator, locatorType="id"):
+    def sendKeys(self, data, locator, locatorType="css"):
         try:
             element = self.getElement(locator, locatorType)
             element.send_keys(data)
@@ -92,7 +92,7 @@ class SeleniumDriver():
                   " locatorType: " + locatorType)
             print_stack()
 
-    def isElementPresent(self, locator, locatorType="id"):
+    def isElementPresent(self, locator, locatorType="css"):
         try:
             element = self.getElement(locator, locatorType)
             if element is not None:
@@ -122,7 +122,7 @@ class SeleniumDriver():
             self.log.info("Element not found")
             return False
 
-    def waitForElement(self, locator, locatorType="id",
+    def waitForElement(self, locator, locatorType="css",
                                timeout=5, pollFrequency=0.2):
         element = None
         try:
@@ -133,8 +133,7 @@ class SeleniumDriver():
                                  ignored_exceptions=[NoSuchElementException,
                                                      ElementNotVisibleException,
                                                      ElementNotSelectableException])
-            element = wait.until(EC.element_to_be_clickable((byType,
-                                                             "stopFilter_stops-0")))
+            element = wait.until(EC.element_to_be_clickable((byType, locator)))
             self.log.info("Element appeared on the web page")
         except:
             self.log.info("Element not appeared on the web page")
