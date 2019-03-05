@@ -1,0 +1,4 @@
+class Globals():
+
+	currentUsername = ""
+	currentPassword = ""

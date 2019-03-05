@@ -30,4 +30,5 @@ I'm using PyCharm as IDE: https://www.jetbrains.com/pycharm/download/
 - tests/directory/example_tests.py is the test file that will be executed.
 - screenshots/ will be populated with screenshots taken by selenium webdriver during test execution. it can be customized (only at failure)
 - utilities/ this should contain helpers or external methods
+- utilities/globals.py can be used to store global variables
 - conftest.py must be in project root and it can contain plugins or settings
