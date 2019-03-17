@@ -1,4 +1,8 @@
-class Globals():
+class Globals:
+    currentUserEmail = ''
+    currentUserPass = ''
+    accessToken = ''
+    currentUserID = ''
 
-	currentUsername = ""
-	currentPassword = ""
+    def globals(self):
+        pass

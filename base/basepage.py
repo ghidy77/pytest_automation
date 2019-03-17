@@ -1,5 +1,5 @@
 """
-@package base
+# @package base
 
 This should contain methods common to all pages
 This class needs to be inherited by all the page classes
@@ -8,6 +8,7 @@ Example:
 """
 from base.selenium_driver import SeleniumDriver
 from traceback import print_stack
+import time
 
 class BasePage(SeleniumDriver):
 
@@ -46,3 +47,7 @@ class BasePage(SeleniumDriver):
             self.log.error("Failed to get page title")
             print_stack()
             return False
+
+    def sleep(self, seconds):
+        time.sleep(seconds)
+        self.log.info("Waiting for " + str(seconds) + " seconds")
